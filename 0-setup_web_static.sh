@@ -4,7 +4,7 @@
 
 sudo apt-get update
 sudo apt-get install -y nginx
-sudo mkdir -p /data/web_static/releases/test/
+sudo mkdir -p /data/web_static/releases/test
 sudo mkdir -p /data/web_static/shared/
 echo "<html>
   <head>
