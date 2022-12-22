@@ -7,8 +7,8 @@ $configuration = "server {
     index index.html index.htm index.nginx-debian.html;
     server_name _;
     location / {
-                try_files $uri $uri/ =404;
-                add_header X-Served-By $hostname;
+                try_files \$uri \$uri/ =404;
+                add_header X-Served-By \$hostname;
     }
     location /redirect_me{
         return 301 https://www.youtube.com/watch?v=y6120QOlsfU;
