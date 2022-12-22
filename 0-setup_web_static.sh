@@ -1,10 +1,10 @@
 #! /usr/bin/env bash
 # Script that sets up your web servers for the deployment
 sudo mkdir -p /data/web_static/releases/test
+sudo mkdir -p /data/web_static/shared
 echo "<h1>Hello World<h1>" > /data/web_static/releases/test/index.html
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 sudo chown -hR ubuntu:ubuntu /data/
-sudo apt-get -y install nginx
 echo "server {
     listen 80 default_server;
     listen [::]:80 default_server;
