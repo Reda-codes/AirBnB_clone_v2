@@ -70,14 +70,9 @@ file {'/data/web_static/shared/':
   ensure  => 'directory',
 }
 
-file {'/data/web_static/shared/':
+file {'/data/web_static/releases/test/index.html':
   ensure  => 'file',
   content => $body,
-}
-
-exec {'symbolik link':
-  provider => shell,
-  command  => 'sudo ln -sf /data/web_static/releases/test/ /data/web_static/current'
 }
 
 exec {'symbolik link':
@@ -88,4 +83,9 @@ exec {'symbolik link':
 exec {'ownership':
   provider => shell,
   command  => 'sudo chown -hR ubuntu:ubuntu /data/'
+}
+
+exec {'restart nginx':
+  provider => shell,
+  command  => 'sudo service nginx restart'
 }
