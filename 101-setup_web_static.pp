@@ -62,12 +62,12 @@ file {'/etc/nginx/sites-available/default':
   content => $configuration,
 }
 
-file {'/data/web_static/releases/test':
-  ensure  => 'directory',
+file {'/data/web_static/releases/test/tt':
+  ensure  => 'file',
 }
 
-file {'/data/web_static/shared/':
-  ensure  => 'directory',
+file {'/data/web_static/shared/tt':
+  ensure  => 'file',
 }
 
 file {'/data/web_static/releases/test/index.html':

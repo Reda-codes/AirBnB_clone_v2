@@ -9,6 +9,7 @@ from os.path import exists, isdir
 from datetime import datetime
 env.hosts = ['52.3.245.122', '100.26.223.72']
 
+
 def do_pack():
     """generates an archive"""
     date = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -23,6 +24,7 @@ def do_pack():
         return None
 
     return name
+
 
 def do_deploy(archive_path):
     """Code to execute"""
@@ -43,6 +45,7 @@ def do_deploy(archive_path):
         return True
     except Exception:
         return False
+
 
 def deploy():
     """creates and distributes the archive to the servers"""
