@@ -62,12 +62,12 @@ file {'/etc/nginx/sites-available/default':
   content => $configuration,
 }
 
-file {'/data/web_static/releases/test/tt':
-  ensure  => 'file',
+exec {'dir':
+  command => '/usr/bin/env mkdir -p /data/web_static/releases/test/',
 }
 
-file {'/data/web_static/shared/tt':
-  ensure  => 'file',
+exec {'dir2':
+  command => '/usr/bin/env mkdir -p /data/web_static/shared/',
 }
 
 file {'/data/web_static/releases/test/index.html':
@@ -81,11 +81,9 @@ exec {'symbolik link':
 }
 
 exec {'ownership':
-  provider => shell,
-  command  => 'sudo chown -hR ubuntu:ubuntu /data/'
+  command => '/usr/bin/env chown -R ubuntu:ubuntu /data',
 }
 
 exec {'restart nginx':
-  provider => shell,
-  command  => 'sudo service nginx restart'
+  command  => '/usr/bin/env service nginx restart'
 }
