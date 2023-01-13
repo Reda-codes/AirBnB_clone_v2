@@ -12,7 +12,7 @@ def hello_route():
 
 @app.route('/hbnb', strict_slashes=False)
 def hbnb_route():
-    return 'HBNB!'
+    return 'HBNB'
 
 
 @app.route('/c/<text>', strict_slashes=False)
@@ -21,4 +21,4 @@ def text_route(text):
 
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run()
