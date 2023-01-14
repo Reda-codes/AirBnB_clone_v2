@@ -103,3 +103,7 @@ class DBStorage:
                 expire_on_commit=False)
         # print("reload works")
         self.__session = scoped_session(session_factory)
+
+    def close(self):
+        """Close current session"""
+        self.__session.remove()

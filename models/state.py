@@ -18,7 +18,7 @@ else:
     class State(BaseModel):
         """ State class """
 
-        name = ""
+        name = Column(String(128), nullable=False)
 
         #def __init__(self, *args, **kwargs):
             #"""initializes state"""
