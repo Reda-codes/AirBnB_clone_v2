@@ -20,9 +20,6 @@ else:
 
         name = Column(String(128), nullable=False)
 
-        #def __init__(self, *args, **kwargs):
-            #"""initializes state"""
-            #super().__init__(*args, **kwargs)
         @property
         def cities(self):
             """City objects getter"""
