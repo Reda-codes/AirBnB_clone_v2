@@ -24,7 +24,9 @@ else:
         def cities(self):
             """City objects getter"""
             from models import storage
-            from models.city import City
-            objects = storage.all(City)
-            return [value for value in objects.values()
-                    if value.state_id == State.id]
+            city_list = []
+            all_cities = models.storage.all(City)
+            for city in all_cities.values():
+                if city.state_id == self.id:
+                    city_list.append(city)
+            return city_list
