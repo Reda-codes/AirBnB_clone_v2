@@ -12,6 +12,7 @@ if getenv('HBNB_TYPE_STORAGE') == 'db':
         """ State class """
 
         __tablename__ = 'states'
+        __table_args__ = ({'mysql_default_charset': 'latin1'})
         name = Column(String(128), nullable=False)
         cities = relationship('City', cascade="all, delete", backref='state')
 else:

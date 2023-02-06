@@ -13,6 +13,7 @@ if getenv('HBNB_TYPE_STORAGE') == 'db':
         """ Defines the Amenity class """
 
         __tablename__ = 'amenities'
+        __table_args__ = ({'mysql_default_charset': 'latin1'})
         name = Column(String(128), nullable=False)
         place_amenities = relationship(
                 'Place', secondary=Place.place_amenity,
